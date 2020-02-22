@@ -1,0 +1,11 @@
+---
+  - name: " Listing Local files"
+    hosts: localhost
+    connection: local
+    tasks:
+
+      - name: " execute ls -lrt command"
+        shell: "man ls"
+        register: "output"
+
+      - debug: var=output.stdout_lines
